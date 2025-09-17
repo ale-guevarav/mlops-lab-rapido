@@ -1,0 +1,16 @@
+import json, sys
+
+MIN_ACC = 0.90  # Cambia a 0.99 para forzar FAIL
+
+def main():
+    with open("artifacts/metrics.json") as f:
+        metrics = json.load(f)
+    acc = metrics.get("accuracy", 0.0)
+    print("Evaluación -> accuracy:", acc)
+    if acc < MIN_ACC:
+        print("FAIL: accuracy por debajo del umbral", MIN_ACC)
+        sys.exit(1)
+    print("Evaluación OK")
+
+if __name__ == "__main__":
+    main()

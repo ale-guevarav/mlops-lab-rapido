@@ -1,6 +1,6 @@
 import json, sys
 
-MIN_ACC = 0.90  # Cambia a 0.99 para forzar FAIL
+MIN_ACC = 0.99  # Cambia a 0.99 para forzar FAIL
 
 def main():
     with open("artifacts/metrics.json") as f:
